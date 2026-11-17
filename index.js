@@ -2318,7 +2318,7 @@ var init_config = __esm({
     init_workers();
     init_themePresets();
     init_defaultToolCallConfig();
-    extensionName = "st-chatu8";
+    extensionName = "st-chatu8-personal";
     extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
     EventType = {
       GENERATE_IMAGE_REQUEST: "generate-image-request",
@@ -9673,7 +9673,7 @@ async function countTokens(messages, model) {
   try {
     if (!model) {
       const { extension_settings: es } = await import("../../../extensions.js");
-      const settings3 = es?.["st-chatu8"];
+      const settings3 = es?.["st-chatu8-personal"];
       const profileName = settings3?.current_llm_profile || "\u9ED8\u8BA4";
       model = settings3?.llm_profiles?.[profileName]?.model || "gpt-4";
     }
@@ -18652,16 +18652,16 @@ var init_worldEntrySelection = __esm({
 
 async function setcharData(name, value) {
   let context = getContext2();
-  context.chatMetadata["st-chatu8"] = context.chatMetadata["st-chatu8"] || {};
-  context.chatMetadata["st-chatu8"]["data"] = context.chatMetadata["st-chatu8"]["data"] || {};
-  context.chatMetadata["st-chatu8"]["data"][name] = value;
+  context.chatMetadata["st-chatu8-personal"] = context.chatMetadata["st-chatu8-personal"] || {};
+  context.chatMetadata["st-chatu8-personal"]["data"] = context.chatMetadata["st-chatu8-personal"]["data"] || {};
+  context.chatMetadata["st-chatu8-personal"]["data"][name] = value;
   saveChatConditional2();
 }
 async function getcharData(name) {
   let context = getContext2();
-  context.chatMetadata["st-chatu8"] = context.chatMetadata["st-chatu8"] || {};
-  context.chatMetadata["st-chatu8"]["data"] = context.chatMetadata["st-chatu8"]["data"] || {};
-  return context.chatMetadata["st-chatu8"]["data"][name] || {};
+  context.chatMetadata["st-chatu8-personal"] = context.chatMetadata["st-chatu8-personal"] || {};
+  context.chatMetadata["st-chatu8-personal"]["data"] = context.chatMetadata["st-chatu8-personal"]["data"] || {};
+  return context.chatMetadata["st-chatu8-personal"]["data"][name] || {};
 }
 async function getElContext(el, maxCount = 3, options = {}) {
   const keepImageTagInHistory = options.keepImageTagInHistory === true;
@@ -80916,7 +80916,7 @@ function initAiAssistant(modal) {
       return;
     }
     const chatBody = dom.chatBody;
-    const icon = '<img src="/scripts/extensions/third-party/st-chatu8/html/settings/\u667A\u7ED8\u59EC\u5934\u50CF.png" alt="\u667A\u7ED8\u59EC" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">';
+    const icon = '<img src="/scripts/extensions/third-party/st-chatu8-personal/html/settings/\u667A\u7ED8\u59EC\u5934\u50CF.png" alt="\u667A\u7ED8\u59EC" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">';
     const messageHtml = `
             <div class="st-chatu8-ai-msg system-msg">
                 <div class="msg-avatar">${icon}</div>
@@ -87920,7 +87920,7 @@ async function handleExportLog() {
     return;
   }
   const { extension_settings: extension_settings117 } = await import("../../../extensions.js");
-  const settings3 = extension_settings117["st-chatu8"] || {};
+  const settings3 = extension_settings117["st-chatu8-personal"] || {};
   let settingsInfo = "========== st-chatu8 \u63D2\u4EF6\u8BBE\u7F6E\u4FE1\u606F ==========\n";
   const extensionVersion = await getLocalExtensionVersion();
   settingsInfo += `1. \u667A\u7ED8\u59EC\u7684\u7248\u672C: ${extensionVersion} (\u6839\u636Emanifest.json)
@@ -114273,7 +114273,7 @@ function setUpdateStatus(text, cls) {
     el.className = `st-chatu8-update-status ${cls || ""}`.trim();
   }
 }
-var REINSTALL_GIT_URL = "https://github.com/damoshen123/st-chatu8.git";
+var REINSTALL_GIT_URL = "https://github.com/montyrosales1671998uqe-web/workbbbbbudy-.git";
 function showReinstallGuide(reason) {
   const existing = document.getElementById("st-chatu8-reinstall-guide");
   if (existing) existing.remove();
